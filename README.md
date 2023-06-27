@@ -72,6 +72,25 @@ Example commands:
 cd school_library
 ```
 
+### Install
+
+Install this project with:
+
+N/A
+
+### Usage
+
+Run command ```ruby main.rb```
+
+### Run tests
+
+N/A
+
+
+### Deployment
+
+N/A
+
 <p align="right">(<a href="#readme-top"></a>)</p>
 
 
