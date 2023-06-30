@@ -1,19 +1,13 @@
+require_relative 'book'
 require_relative 'teacher'
 require_relative 'student'
 require_relative 'rental'
-require_relative 'book'
-require_relative 'person'
-
-# require_relative 'book'
-# require_relative 'teacher'
-# require_relative 'student'
-# require_relative 'rental'
 
 class App
   def initialize
     @books = []
     @people = []
-    @rentals = []
+    @rental = []
   end
 
   def create_person
@@ -94,22 +88,22 @@ class App
       puts 'Enter the date in this format yy/mm/dd: '
       date = gets.chomp
       rental = Rental.new(@people[person_id], @books[book_id], date)
-      @rentals << rental
+      @rental << rental
       puts 'Rental created successfully'
     end
   end
 
   def rental_list
-    if @rentals.empty?
-      puts 'No rentals available'
+    if @rental.empty?
+      puts 'No rental available'
     else
-      puts 'Enter the person ID to get their rentals: '
+      puts 'Enter the person ID to get their rental: '
       person_id = gets.chomp.to_i
-      person_rentals = @rentals.select { |rental| rental.person.id == person_id }
-      if person_rentals.empty?
-        puts 'The selected person has no rentals'
+      person_rental = @rental.select { |rental| rental.person.id == person_id }
+      if person_rental.empty?
+        puts 'The selected person has no rental'
       else
-        person_rentals.each do |rental|
+        person_rental.each do |rental|
           puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
         end
       end
@@ -123,11 +117,12 @@ class App
     puts '3. Create a person.'
     puts '4. Create a book.'
     puts '5. Create a rental.'
-    puts '6. List all rentals.'
+    puts '6. List all rental.'
     puts '7. Exit app'
 
     option_id = gets.chomp
     run_app(option_id)
+    run_app2(option_id)
   end
 
   def exit_app
@@ -137,24 +132,25 @@ class App
 
   def run_app(option_id)
     case option_id
-    when '1'
-      list_books
-    when '2'
-      list_people
-    when '3'
-      create_person
-    when '4'
-      create_book
-    when '5'
-      create_rental
-    when '6'
-      rental_list
-    when '7'
-      exit_app
-    else
-      puts 'Choose an existing option!..'
+    when '1' then list_books
+    when '2' then list_people
+    when '3' then create_person
+    else puts 'Choose an existing option!'
+         return
     end
-    display_options
+    display_options unless option_id == '7'
+  end
+
+  def run_app2(option_id)
+    case option_id
+    when '4' then create_book
+    when '5' then create_rental
+    when '6' then rental_list
+    when '7' then exit_app
+    else puts 'Choose an existing option!'
+         return
+    end
+    display_options unless option_id == '7'
   end
 
   def initial
@@ -163,5 +159,6 @@ class App
   end
 end
 
-app = App.new
-app.initial
+# app.rb:132:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for run_app is too high. [9/7]
+#   def run_app(option_id) ...
+#   ^^^^^^^^^^^^^^^^^^^^^^
