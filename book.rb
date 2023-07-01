@@ -1,5 +1,3 @@
-require_relative 'rental'
-
 class Book
   attr_accessor :title, :author, :rentals
 
@@ -9,7 +7,8 @@ class Book
     @rentals = []
   end
 
-  def add_rental(person, date)
-    Rental.new(self, person, date)
+  def add_rental(date, person)
+    rental = Rental.new(date, person, self)
+    @rentals << rental unless @rentals.include?(rental)
   end
 end
