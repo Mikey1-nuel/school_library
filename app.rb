@@ -1,9 +1,9 @@
 # Import the modules needed to run the application
-require_relative './book'
-require_relative './student'
-require_relative './teacher'
-require_relative './person'
-require_relative './rental'
+require_relative 'book'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'person'
+require_relative 'rental'
 
 # Create the app
 # This is the main class of the application
