@@ -1,0 +1,44 @@
+[
+  {
+    "type": "Student",
+    "id": 772,
+    "name": null,
+    "age": null,
+    "parent_permission": null
+  },
+  {
+    "type": "Student",
+    "id": 70,
+    "name": null,
+    "age": null,
+    "parent_permission": null
+  },
+  {
+    "type": "Student",
+    "id": 143,
+    "name": null,
+    "age": null,
+    "parent_permission": null
+  },
+  {
+    "type": "Student",
+    "id": 474,
+    "name": null,
+    "age": null,
+    "parent_permission": null
+  },
+  {
+    "type": "Student",
+    "id": 419,
+    "name": null,
+    "age": null,
+    "parent_permission": null
+  },
+  {
+    "type": "Teacher",
+    "id": 675,
+    "name": "Trevor",
+    "age": 34,
+    "specialization": "Math Teacher"
+  }
+]
