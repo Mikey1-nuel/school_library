@@ -1,44 +1,51 @@
 [
   {
     "type": "Student",
-    "id": 772,
+    "id": 951,
     "name": null,
     "age": null,
     "parent_permission": null
   },
   {
     "type": "Student",
-    "id": 70,
+    "id": 150,
     "name": null,
     "age": null,
     "parent_permission": null
   },
   {
     "type": "Student",
-    "id": 143,
+    "id": 501,
     "name": null,
     "age": null,
     "parent_permission": null
   },
   {
     "type": "Student",
-    "id": 474,
+    "id": 33,
     "name": null,
     "age": null,
     "parent_permission": null
   },
   {
     "type": "Student",
-    "id": 419,
+    "id": 880,
     "name": null,
     "age": null,
     "parent_permission": null
   },
   {
     "type": "Teacher",
-    "id": 675,
+    "id": 426,
     "name": "Trevor",
     "age": 34,
     "specialization": "Math Teacher"
+  },
+  {
+    "type": "Teacher",
+    "id": 524,
+    "name": "Nwakpa Okwi",
+    "age": 37,
+    "specialization": "Tech teacher"
   }
 ]
